@@ -74,7 +74,7 @@ class ProcessVouchers implements ShouldQueue
                 ];
             }
         }
-        Mail::to('jpls80032017@gmail.com')->send(new VoucherReportMail($successfulVouchers, $failedVouchers));
+        Mail::to($this->user->email)->send(new VoucherReportMail($successfulVouchers, $failedVouchers));
     }
 
 }
